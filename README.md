@@ -5,7 +5,7 @@ A modular, graphic-based honeypot to capture IP Adresses, usernames, passwords, 
 # Install
 
 **1) Clone repository.**
-`git clone https://github.com/collinsmc23/ssh_honeypy.git`
+`git clone https://github.com/d4rk3dge/Honeypot_py.git`
 
 **2) Permissions.**
 Move into `ssh_honeypy` folder.
@@ -42,7 +42,6 @@ Example: `python3 honeypy.py -a 0.0.0.0 -p 22 --ssh`
 
 💡 If HONEPY is set up to listen on a privileged port (22), the program must be run with `sudo` or root privileges. No other services should be using the specified port. 
 
-If port 22 is being used as the listener, the default SSH port must be changed. Refer to Hostinger's "[How to Change the SSH Port](https://www.hostinger.com/tutorials/how-to-change-ssh-port-vps)" guide.
 
 ❗ To run with `sudo`, the `root` account must have access to all Python libraries used in this project (libraries defined in `requirements.txt`). Install by switching to the root account, then supply:
 
@@ -106,20 +105,6 @@ HONEPY leverages Python Dash to populate the bar charts, Dash Bootstrap Componen
 
 <img src="/assets/images/Dashboard.PNG" alt="Dashboard" width="600"/>
 
-# VPS Hosting (General Tips)
-To host on VPS, follow the general tips.
-
-To gather logging information, it's advised to use a Virtual Private Server (VPS). VPS's are cloud-based hosts with Internet access. This provides a safe, isolated way to gather real-time information without having to configure and isolate infrastructure on your home network.
-
-You can get 10% off Hostinger VPS with this code (not sponsored on this GitHub project): https://www.hostinger.com/grantcollins
-
-A majority of VPS hosting providers will provide a Virtual Firewall where you can open ports. Ensure to open ports used by HONEYPY.
-- `Port 80`, `Port 5000`, `Port 2223` (Whichever port you configure to listen on real SSH connection), `Port 8050`. 
-
-When working on Linux-based distributions, also open the ports with IP Tables or Unfiltered Firewall (UFW). 
-- `ufw enable`
-- `ufw allow [port]`
-
 # Running in Background With Systemd
 To run HONEPY in the background, you can use Systemd for popular Linux-based distributions.
 
@@ -135,10 +120,6 @@ Reload systemd with the new configuration added, `systemctl daemon-reload`.
 Enable the `honeypy.service` file with `systemctl enable honeypy.service`.  
 
 Start the `honepy.service` file with `systemctl start honepy.service`.
-
-# Video Overview
-
-[![YouTube Video](https://img.youtube.com/vi/tyKyLhcKgNo/0.jpg)](https://youtu.be/tyKyLhcKgNo)
 
 # Future Features
 
